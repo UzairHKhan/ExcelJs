@@ -115,14 +115,14 @@
 // ]
 
 const attributes = [
-  //   {
-  //     title: "OVERALL",
-  //     id: "OVERALL1",
-  //     options: [
-  //       { title: "% Agreement", id: "OVERALL11" },
-  //       { title: "% Disagreement", id: "OVERALL12" },
-  //     ],
-  //   },
+    {
+      title: "OVERALL",
+      id: "OVERALL1",
+      options: [
+        { title: "% Agreement", id: "OVERALL11" },
+        { title: "% Disagreement", id: "OVERALL12" },
+      ],
+    },
   {
     title: "LENGTH OF SERVICE",
     id: "SERVICE1",
@@ -213,7 +213,7 @@ const attributes = [
 const colData = {
   title: "Employee Comments Report 2020",
   subTitle: "Prepared for: Sample Company",
-  // filteredTitle: undefined,
+  filteredTitle: undefined,
   attributes,
 };
 

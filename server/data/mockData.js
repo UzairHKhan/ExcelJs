@@ -101,6 +101,986 @@ const data = [
     attributes: [
       {
         attributeId: "SERVICE1",
+        optionId: "SERVICE11",
+      },
+      {
+        attributeId: "GENERATION1",
+        optionId: "GENERATION12",
+      },
+      {
+        attributeId: "GENDER1",
+        optionId: "GENDER12",
+      },
+      {
+        attributeId: "ETHNIC1",
+        optionId: "ETHNIC12",
+      },
+      {
+        attributeId: "STATUS1",
+        optionId: "STATUS12",
+      },
+    ],
+    survey: {
+      topic: [
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP11",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP12",
+          answer: false,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP13",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP14",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP15",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP16",
+          answer: false,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP17",
+          answer: false,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE11",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE12",
+          answer: false,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE13",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE14",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE15",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE16",
+          answer: false,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE17",
+          answer: false,
+        },
+      ],
+    },
+  },
+  {
+    attributes: [
+      {
+        attributeId: "SERVICE1",
+        optionId: "SERVICE11",
+      },
+      {
+        attributeId: "GENERATION1",
+        optionId: "GENERATION12",
+      },
+      {
+        attributeId: "GENDER1",
+        optionId: "GENDER12",
+      },
+      {
+        attributeId: "ETHNIC1",
+        optionId: "ETHNIC12",
+      },
+      {
+        attributeId: "STATUS1",
+        optionId: "STATUS12",
+      },
+    ],
+    survey: {
+      topic: [
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP11",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP12",
+          answer: false,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP13",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP14",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP15",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP16",
+          answer: false,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP17",
+          answer: false,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE11",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE12",
+          answer: false,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE13",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE14",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE15",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE16",
+          answer: false,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE17",
+          answer: false,
+        },
+      ],
+    },
+  },
+  {
+    attributes: [
+      {
+        attributeId: "SERVICE1",
+        optionId: "SERVICE11",
+      },
+      {
+        attributeId: "GENERATION1",
+        optionId: "GENERATION12",
+      },
+      {
+        attributeId: "GENDER1",
+        optionId: "GENDER12",
+      },
+      {
+        attributeId: "ETHNIC1",
+        optionId: "ETHNIC12",
+      },
+      {
+        attributeId: "STATUS1",
+        optionId: "STATUS12",
+      },
+    ],
+    survey: {
+      topic: [
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP11",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP12",
+          answer: false,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP13",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP14",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP15",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP16",
+          answer: false,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP17",
+          answer: false,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE11",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE12",
+          answer: false,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE13",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE14",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE15",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE16",
+          answer: false,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE17",
+          answer: false,
+        },
+      ],
+    },
+  },
+  {
+    attributes: [
+      {
+        attributeId: "SERVICE1",
+        optionId: "SERVICE11",
+      },
+      {
+        attributeId: "GENERATION1",
+        optionId: "GENERATION12",
+      },
+      {
+        attributeId: "GENDER1",
+        optionId: "GENDER12",
+      },
+      {
+        attributeId: "ETHNIC1",
+        optionId: "ETHNIC12",
+      },
+      {
+        attributeId: "STATUS1",
+        optionId: "STATUS12",
+      },
+    ],
+    survey: {
+      topic: [
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP11",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP12",
+          answer: false,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP13",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP14",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP15",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP16",
+          answer: false,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP17",
+          answer: false,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE11",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE12",
+          answer: false,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE13",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE14",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE15",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE16",
+          answer: false,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE17",
+          answer: false,
+        },
+      ],
+    },
+  },
+  {
+    attributes: [
+      {
+        attributeId: "SERVICE1",
+        optionId: "SERVICE11",
+      },
+      {
+        attributeId: "GENERATION1",
+        optionId: "GENERATION12",
+      },
+      {
+        attributeId: "GENDER1",
+        optionId: "GENDER12",
+      },
+      {
+        attributeId: "ETHNIC1",
+        optionId: "ETHNIC12",
+      },
+      {
+        attributeId: "STATUS1",
+        optionId: "STATUS12",
+      },
+    ],
+    survey: {
+      topic: [
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP11",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP12",
+          answer: false,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP13",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP14",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP15",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP16",
+          answer: false,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP17",
+          answer: false,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE11",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE12",
+          answer: false,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE13",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE14",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE15",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE16",
+          answer: false,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE17",
+          answer: false,
+        },
+      ],
+    },
+  },
+  {
+    attributes: [
+      {
+        attributeId: "SERVICE1",
+        optionId: "SERVICE11",
+      },
+      {
+        attributeId: "GENERATION1",
+        optionId: "GENERATION12",
+      },
+      {
+        attributeId: "GENDER1",
+        optionId: "GENDER12",
+      },
+      {
+        attributeId: "ETHNIC1",
+        optionId: "ETHNIC12",
+      },
+      {
+        attributeId: "STATUS1",
+        optionId: "STATUS12",
+      },
+    ],
+    survey: {
+      topic: [
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP11",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP12",
+          answer: false,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP13",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP14",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP15",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP16",
+          answer: false,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP17",
+          answer: false,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE11",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE12",
+          answer: false,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE13",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE14",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE15",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE16",
+          answer: false,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE17",
+          answer: false,
+        },
+      ],
+    },
+  },
+  {
+    attributes: [
+      {
+        attributeId: "SERVICE1",
+        optionId: "SERVICE11",
+      },
+      {
+        attributeId: "GENERATION1",
+        optionId: "GENERATION12",
+      },
+      {
+        attributeId: "GENDER1",
+        optionId: "GENDER12",
+      },
+      {
+        attributeId: "ETHNIC1",
+        optionId: "ETHNIC12",
+      },
+      {
+        attributeId: "STATUS1",
+        optionId: "STATUS12",
+      },
+    ],
+    survey: {
+      topic: [
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP11",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP12",
+          answer: false,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP13",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP14",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP15",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP16",
+          answer: false,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP17",
+          answer: false,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE11",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE12",
+          answer: false,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE13",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE14",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE15",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE16",
+          answer: false,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE17",
+          answer: false,
+        },
+      ],
+    },
+  },
+  {
+    attributes: [
+      {
+        attributeId: "SERVICE1",
+        optionId: "SERVICE11",
+      },
+      {
+        attributeId: "GENERATION1",
+        optionId: "GENERATION12",
+      },
+      {
+        attributeId: "GENDER1",
+        optionId: "GENDER12",
+      },
+      {
+        attributeId: "ETHNIC1",
+        optionId: "ETHNIC12",
+      },
+      {
+        attributeId: "STATUS1",
+        optionId: "STATUS12",
+      },
+    ],
+    survey: {
+      topic: [
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP11",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP12",
+          answer: false,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP13",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP14",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP15",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP16",
+          answer: false,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP17",
+          answer: false,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE11",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE12",
+          answer: false,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE13",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE14",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE15",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE16",
+          answer: false,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE17",
+          answer: false,
+        },
+      ],
+    },
+  },
+  {
+    attributes: [
+      {
+        attributeId: "SERVICE1",
+        optionId: "SERVICE11",
+      },
+      {
+        attributeId: "GENERATION1",
+        optionId: "GENERATION12",
+      },
+      {
+        attributeId: "GENDER1",
+        optionId: "GENDER12",
+      },
+      {
+        attributeId: "ETHNIC1",
+        optionId: "ETHNIC12",
+      },
+      {
+        attributeId: "STATUS1",
+        optionId: "STATUS12",
+      },
+    ],
+    survey: {
+      topic: [
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP11",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP12",
+          answer: false,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP13",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP14",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP15",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP16",
+          answer: false,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP17",
+          answer: false,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE11",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE12",
+          answer: false,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE13",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE14",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE15",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE16",
+          answer: false,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE17",
+          answer: false,
+        },
+      ],
+    },
+  },
+  {
+    attributes: [
+      {
+        attributeId: "SERVICE1",
+        optionId: "SERVICE11",
+      },
+      {
+        attributeId: "GENERATION1",
+        optionId: "GENERATION12",
+      },
+      {
+        attributeId: "GENDER1",
+        optionId: "GENDER12",
+      },
+      {
+        attributeId: "ETHNIC1",
+        optionId: "ETHNIC12",
+      },
+      {
+        attributeId: "STATUS1",
+        optionId: "STATUS12",
+      },
+    ],
+    survey: {
+      topic: [
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP11",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP12",
+          answer: false,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP13",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP14",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP15",
+          answer: true,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP16",
+          answer: false,
+        },
+        {
+          topicId: "LEADERSHIP1",
+          questionId: "LEADERSHIP17",
+          answer: false,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE11",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE12",
+          answer: false,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE13",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE14",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE15",
+          answer: true,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE16",
+          answer: false,
+        },
+        {
+          topicId: "CORPORATE1",
+          questionId: "CORPORATE17",
+          answer: false,
+        },
+      ],
+    },
+  },
+  {
+    attributes: [
+      {
+        attributeId: "SERVICE1",
         optionId: "SERVICE15",
       },
       {

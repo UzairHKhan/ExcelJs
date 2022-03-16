@@ -33,6 +33,18 @@ const createExcel1 = (req, res) => {
     bold: true,
     color: { argb: "00529F" },
   };
+  if (colData.filteredTitle) {
+    worksheet.mergeCells(3, 2, 3, columnToMarge);
+    const cellSubTitle = worksheet.getCell(3, 4);
+    cellSubTitle.value = colData.filteredTitle;
+    cellSubTitle.alignment = { horizontal: "right", wrapText: true };
+    cellSubTitle.font = {
+      name: "Arial",
+      size: 28,
+      bold: true,
+      color: { argb: "00529F" },
+    };
+  }
 
   columnToMarge = 1;
   const attrHeadRow = colData.filteredTitle ? 4 : 3;
@@ -253,8 +265,6 @@ const createExcel1 = (req, res) => {
     }
   });
 
-
-
   data.forEach((surveyData) => {
     // const count = surveyData.survey.topic.reduce((acc, d) => acc + (d.answer ? 1 : 0));
 
@@ -263,30 +273,31 @@ const createExcel1 = (req, res) => {
       surveyData.attributes.forEach((attr) => {
         const left = cellPathLeftHash[attr.optionId];
         const cell = worksheet.getCell(top, left);
-        if (!ans.answer && !cell.value) {
-          cell.value = "x";
+        if (ans.answer) {
+          cell.value = (cell.value || 0) + 1;
         }
-        if (ans.answer && cell.value === "x") {
-          cell.value = 1;
-        }
-        if (ans.answer && cell.value !== "x") {
-          cell.value = cell.value + 1;
-        }
-
       });
     });
   });
 
-  for(let key in cellPathTopHash) {
+  for (let key in cellPathTopHash) {
     const top = cellPathTopHash[key];
-    for(let leftKey in cellPathLeftHash) {
+    for (let leftKey in cellPathLeftHash) {
       const left = cellPathLeftHash[leftKey];
-      const cell = worksheet.getCell(top, left)
-      if(!cell.value) {
-        cell.value = 'x'
+      const cell = worksheet.getCell(top, left);
+      if (!cell.value || cell.value < 5) {
+        cell.value = "x";
+      } else if (cell.value >= 5) {
+        const totalResponseRow = cellTotalResponses.fullAddress.row;
+        const totalResponseOfQuestion = worksheet.getCell(
+          totalResponseRow,
+          left
+        ).value;
+        const percentage = (cell.value / totalResponseOfQuestion) * 100;
+        cell.value = Math.round(percentage);
+        // cell.value = { formula: `ROUND(${percentage},0)` };
       }
       cell.alignment = { horizontal: "center" };
-
     }
   }
 
