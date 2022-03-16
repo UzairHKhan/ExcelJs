@@ -254,6 +254,45 @@ const topics = [
       },
     ],
   },
+
+  {
+    title: "CORPORATE CULTURE AND COMMUNICATIONS",
+    id: "CORPORATE1",
+    questions: [
+      {
+        title:
+          "This organization's corporate communications are frequent enough",
+        id: "CORPORATE11",
+      },
+      {
+        title:
+          "This organization's corporate communications are detailed enough",
+        id: "CORPORATE12",
+      },
+      {
+        title:
+          "The leaders of this organization care about their employees' well being",
+        id: "CORPORATE13",
+      },
+      {
+        title: "Senior leaders live the core values of the organization",
+        id: "CORPORATE14",
+      },
+      {
+        title: "There is adequate planning of departmental objectives",
+        id: "CORPORATE15",
+      },
+      {
+        title: "There is adequate follow-through of departmental objectives",
+        id: "CORPORATE16",
+      },
+      {
+        title:
+          "The leaders of this organization are open to input from employees",
+        id: "CORPORATE17",
+      },
+    ],
+  },
 ];
 
 module.exports = {

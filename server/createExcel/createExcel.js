@@ -37,7 +37,8 @@ const createExcel1 = (req, res) => {
   columnToMarge = 1;
   const attrHeadRow = colData.filteredTitle ? 4 : 3;
   // const attributes = [];
-  // const cellPathHash = {};
+  const cellPathLeftHash = {};
+  const cellPathTopHash = {};
   // const topOffset = colData.filteredTitle ? 7 : 6;
   // const leftOffset = 1;
 
@@ -65,12 +66,8 @@ const createExcel1 = (req, res) => {
     };
     // attributes.push(attribute.options.map((attr) => attr.title));
     attribute.options.forEach((option, optionColNo) => {
-      // if (!cellPathHash[attribute.id]) {
-      //   cellPathHash[attribute.id] = {};
-      // }
-      // cellPathHash[attribute.id][option.id] = {
-      //   left: optionColNo + columnNo,
-      // };
+      cellPathLeftHash[option.id] = optionColNo + columnNo;
+
       const cellSubHeading = worksheet.getCell(
         attrHeadRow + 1,
         optionColNo + columnNo
@@ -177,7 +174,125 @@ const createExcel1 = (req, res) => {
     color: { argb: "FFFFFF" },
   };
 
-  const AllOptions = colData.attributes
+  topics.forEach((topic) => {
+    const topicTitle = worksheet.addRow([topic.title]);
+    topicTitle.font = {
+      name: "Arial",
+      size: 14,
+      bold: true,
+      color: { argb: "00529F" },
+    };
+
+    topic.questions.forEach((question) => {
+      const questionTitle = worksheet.addRow([question.title]);
+      cellPathTopHash[question.id] = questionTitle.number;
+      // questionTitle.
+    });
+    const avrRowData = [topic.title + " - AVERAGE"];
+
+    const avrRow = worksheet.addRow(avrRowData);
+    avrRow.font = {
+      name: "Arial",
+      size: 11,
+      bold: true,
+    };
+    // console.log(topicTitle.number + 1, avrRow.number - 1);
+    avrRow.getCell(1).alignment = {
+      horizontal: "right",
+    };
+    avrRow.getCell(1).border = {
+      left: {
+        style: "thin",
+      },
+      right: {
+        style: "thin",
+      },
+      top: {
+        style: "thin",
+      },
+      bottom: {
+        style: "thin",
+      },
+    };
+    avrRow.getCell(1).fill = {
+      type: "pattern",
+      pattern: "solid",
+      fgColor: { argb: "BEBEBE" },
+    };
+    for (let key in cellPathLeftHash) {
+      const columnNumber = cellPathLeftHash[key];
+      const topCell = worksheet.getCell(topicTitle.number + 1, columnNumber);
+      const bottomCell = worksheet.getCell(avrRow.number - 1, columnNumber);
+      // console.log(topCell.fullAddress, bottomCell.fullAddress);
+      const cellRange = `${topCell.fullAddress.address}:${bottomCell.address}`;
+      avrRow.getCell(columnNumber).border = {
+        left: {
+          style: "thin",
+        },
+        right: {
+          style: "thin",
+        },
+        top: {
+          style: "thin",
+        },
+        bottom: {
+          style: "thin",
+        },
+      };
+      avrRow.getCell(columnNumber).fill = {
+        type: "pattern",
+        pattern: "solid",
+        fgColor: { argb: "BEBEBE" },
+      };
+      avrRow.getCell(columnNumber).alignment = { horizontal: "center" };
+      avrRow.getCell(columnNumber).value = {
+        // formula: `AVERAGE(${cellRange})`,
+        formula: `IF(COUNT(${cellRange}),ROUND(AVERAGE(${cellRange}),0),"x")`,
+      };
+      // avrRow.getCell(columnNumber);
+    }
+  });
+
+
+
+  data.forEach((surveyData) => {
+    // const count = surveyData.survey.topic.reduce((acc, d) => acc + (d.answer ? 1 : 0));
+
+    surveyData.survey.topic.forEach((ans) => {
+      const top = cellPathTopHash[ans.questionId];
+      surveyData.attributes.forEach((attr) => {
+        const left = cellPathLeftHash[attr.optionId];
+        const cell = worksheet.getCell(top, left);
+        if (!ans.answer && !cell.value) {
+          cell.value = "x";
+        }
+        if (ans.answer && cell.value === "x") {
+          cell.value = 1;
+        }
+        if (ans.answer && cell.value !== "x") {
+          cell.value = cell.value + 1;
+        }
+
+      });
+    });
+  });
+
+  for(let key in cellPathTopHash) {
+    const top = cellPathTopHash[key];
+    for(let leftKey in cellPathLeftHash) {
+      const left = cellPathLeftHash[leftKey];
+      const cell = worksheet.getCell(top, left)
+      if(!cell.value) {
+        cell.value = 'x'
+      }
+      cell.alignment = { horizontal: "center" };
+
+    }
+  }
+
+  // console.log(cellPathLeftHash, cellPathTopHash)
+
+  /* const AllOptions = colData.attributes
     .map((attribute) =>
       attribute.options.map((option) => ({
         ...option,
@@ -241,7 +356,7 @@ const createExcel1 = (req, res) => {
         wrapText: true,
       };
     });
-  });
+  }); */
 
   res.setHeader(
     "Content-Type",
