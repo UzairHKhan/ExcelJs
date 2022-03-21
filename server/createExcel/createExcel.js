@@ -12,10 +12,15 @@ const createExcel1 = (req, res) => {
     1
   );
 
-  worksheet.mergeCells(1, 2, 1, columnToMarge);
+  worksheet.mergeCells(1, 2, 1, columnToMarge + 2);
+  worksheet.getRow(1).height = 45;
   const cellTitle = worksheet.getCell(1, 4);
   cellTitle.value = colData.title;
-  cellTitle.alignment = { horizontal: "right", wrapText: true };
+  cellTitle.alignment = {
+    horizontal: "right",
+    wrapText: true,
+    vertical: "middle",
+  };
   cellTitle.font = {
     name: "Arial",
     size: 36,
@@ -23,10 +28,15 @@ const createExcel1 = (req, res) => {
     color: { argb: "00529F" },
   };
 
-  worksheet.mergeCells(2, 2, 2, columnToMarge);
+  worksheet.mergeCells(2, 2, 2, columnToMarge + 2);
+  worksheet.getRow(2).height = 45;
   const cellSubTitle = worksheet.getCell(2, 4);
   cellSubTitle.value = colData.subTitle;
-  cellSubTitle.alignment = { horizontal: "right", wrapText: true };
+  cellSubTitle.alignment = {
+    horizontal: "right",
+    wrapText: true,
+    vertical: "middle",
+  };
   cellSubTitle.font = {
     name: "Arial",
     size: 28,
@@ -34,10 +44,15 @@ const createExcel1 = (req, res) => {
     color: { argb: "00529F" },
   };
   if (colData.filteredTitle) {
-    worksheet.mergeCells(3, 2, 3, columnToMarge);
+    worksheet.mergeCells(3, 2, 3, columnToMarge + 2);
+    worksheet.getRow(3).height = 45;
     const cellSubTitle = worksheet.getCell(3, 4);
     cellSubTitle.value = colData.filteredTitle;
-    cellSubTitle.alignment = { horizontal: "right", wrapText: true };
+    cellSubTitle.alignment = {
+      horizontal: "right",
+      wrapText: true,
+      vertical: "middle",
+    };
     cellSubTitle.font = {
       name: "Arial",
       size: 28,
@@ -46,7 +61,7 @@ const createExcel1 = (req, res) => {
     };
   }
 
-  columnToMarge = 1;
+  columnToMarge = 2;
   const attrHeadRow = colData.filteredTitle ? 4 : 3;
   // const attributes = [];
   const cellPathLeftHash = {};
@@ -56,6 +71,54 @@ const createExcel1 = (req, res) => {
 
   worksheet.getRow(attrHeadRow).height = 26;
 
+  worksheet.mergeCells(attrHeadRow, 2, attrHeadRow, ++columnToMarge);
+  const overAllCell = worksheet.getCell(attrHeadRow, columnToMarge);
+  overAllCell.value = "OVERALL";
+  overAllCell.alignment = { horizontal: "center", vertical: "middle" };
+  overAllCell.fill = {
+    type: "pattern",
+    pattern: "solid",
+  };
+  overAllCell.font = {
+    name: "Arial",
+    size: 10,
+    bold: true,
+    color: { argb: "FFFFFF" },
+  };
+  const overallSubHeadings = ["% Agreement", "% Disagreement"];
+
+  overallSubHeadings.forEach((subHeadings, cell) => {
+    const overallSubHeading = worksheet.getCell(attrHeadRow + 1, 2 + cell);
+    overallSubHeading.value = subHeadings;
+    overallSubHeading.alignment = {
+      textRotation: 90,
+      wrapText: true,
+      horizontal: "center",
+    };
+    overallSubHeading.fill = {
+      type: "pattern",
+      pattern: "solid",
+      fgColor: { argb: "BEBEBE" },
+    };
+    overallSubHeading.border = {
+      left: {
+        style: "thin",
+      },
+      right: {
+        style: "thin",
+      },
+    };
+    overallSubHeading.font = {
+      name: "Arial",
+      size: 9,
+      bold: true,
+    };
+    worksheet.getCell(attrHeadRow + 2, 2 + cell).fill = {
+      type: "pattern",
+      pattern: "solid",
+    };
+  });
+
   colData.attributes.forEach((attribute) => {
     const columnNo = columnToMarge + 1;
     columnToMarge += attribute.options.length;
@@ -63,8 +126,6 @@ const createExcel1 = (req, res) => {
     worksheet.mergeCells(attrHeadRow, columnNo, attrHeadRow, columnToMarge);
     const cellHeading = worksheet.getCell(attrHeadRow, columnNo);
     cellHeading.value = attribute.title;
-    cellHeading.name = attribute.id;
-
     cellHeading.alignment = { horizontal: "center", vertical: "middle" };
     cellHeading.fill = {
       type: "pattern",
@@ -89,7 +150,6 @@ const createExcel1 = (req, res) => {
         optionColNo + columnNo
       );
       cellSubHeading.value = option.title;
-      cellSubHeading.name = option.id;
       worksheet.getRow(attrHeadRow + 1).height = 175;
       cellSubHeading.alignment = {
         textRotation: 90,
@@ -140,8 +200,6 @@ const createExcel1 = (req, res) => {
       };
     });
   });
-
-  // console.log(cellPathHash);
 
   // const attributesRow = worksheet.addRow(attributes.flat());
   // attributesRow.height = 175;
@@ -198,7 +256,6 @@ const createExcel1 = (req, res) => {
     topic.questions.forEach((question) => {
       const questionTitle = worksheet.addRow([question.title]);
       cellPathTopHash[question.id] = questionTitle.number;
-      // questionTitle.
     });
     const avrRowData = [topic.title + " - AVERAGE"];
 
@@ -208,7 +265,6 @@ const createExcel1 = (req, res) => {
       size: 11,
       bold: true,
     };
-    // console.log(topicTitle.number + 1, avrRow.number - 1);
     avrRow.getCell(1).alignment = {
       horizontal: "right",
     };
@@ -235,7 +291,6 @@ const createExcel1 = (req, res) => {
       const columnNumber = cellPathLeftHash[key];
       const topCell = worksheet.getCell(topicTitle.number + 1, columnNumber);
       const bottomCell = worksheet.getCell(avrRow.number - 1, columnNumber);
-      // console.log(topCell.fullAddress, bottomCell.fullAddress);
       const cellRange = `${topCell.fullAddress.address}:${bottomCell.address}`;
       avrRow.getCell(columnNumber).border = {
         left: {
@@ -279,9 +334,19 @@ const createExcel1 = (req, res) => {
       });
     });
   });
-
+  const cellPathLeftHashArr = Object.values(cellPathLeftHash);
   for (let key in cellPathTopHash) {
     const top = cellPathTopHash[key];
+    const leftCell = worksheet.getCell(top, Math.min(...cellPathLeftHashArr));
+    const rightCell = worksheet.getCell(top, Math.max(...cellPathLeftHashArr));
+    const cellRange = `${leftCell.address}:${rightCell.address}`;
+    const agreementCell = worksheet.getCell(top, 2);
+    agreementCell.value = {
+      formula: `IF(COUNT(${cellRange}),ROUND(AVERAGE(${cellRange}),0),"x")`,
+    };
+    agreementCell.alignment = {
+      horizontal: "center",
+    };
     for (let leftKey in cellPathLeftHash) {
       const left = cellPathLeftHash[leftKey];
       const cell = worksheet.getCell(top, left);
@@ -300,8 +365,6 @@ const createExcel1 = (req, res) => {
       cell.alignment = { horizontal: "center" };
     }
   }
-
-  // console.log(cellPathLeftHash, cellPathTopHash)
 
   /* const AllOptions = colData.attributes
     .map((attribute) =>
@@ -368,7 +431,6 @@ const createExcel1 = (req, res) => {
       };
     });
   }); */
-
   res.setHeader(
     "Content-Type",
     "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"

@@ -115,14 +115,14 @@
 // ]
 
 const attributes = [
-    {
-      title: "OVERALL",
-      id: "OVERALL1",
-      options: [
-        { title: "% Agreement", id: "OVERALL11" },
-        { title: "% Disagreement", id: "OVERALL12" },
-      ],
-    },
+  // {
+  //   title: "OVERALL",
+  //   id: "OVERALL1",
+  //   options: [
+  //     { title: "% Agreement", id: "OVERALL11" },
+  //     { title: "% Disagreement", id: "OVERALL12" },
+  //   ],
+  // },
   {
     title: "LENGTH OF SERVICE",
     id: "SERVICE1",
